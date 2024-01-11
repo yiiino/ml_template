@@ -47,6 +47,17 @@ We assume the use of the official Kaggle Docker image (similar to the Kaggle env
 
 For detailed instructions and additional information on using the Kaggle Docker image, please refer to [kaggle docker custom (coming soon)](https://github.com/yiiino/).
 
+## Supplementary 
+
+- `scripts/download_dataset.sh`
+    - A script to download data to /kaggle/input using the Kaggle API (including unzipping the zip file).
+    ``` sh
+    $ chmod +x download_dataset.sh
+    $ ./download_dataset.sh kaggle competitions download -c titanic
+    ```
+- `src/utils/utils.py`
+    - A module containing general-purpose functions like logger and setting a fixed seed.
+
 ## 日本語の説明
 
 この`ml_template`リポジトリは、短期間の機械学習プロジェクト（Kaggleコンペティションなど）向けに構成された簡易テンプレートです。
@@ -89,3 +100,14 @@ For detailed instructions and additional information on using the Kaggle Docker 
 Kaggle 公式の Docker イメージを使用することを前提とします（Kaggle 環境と同じく、データ格納は`/kaggle/input/`）。
 
 Kaggle Docker イメージの使用方法と詳細な指示については、[kaggle docker custom (近日公開)](https://github.com/yiiino/)を参照ください。
+
+## 補足
+
+- `scripts/download_dataset.sh`
+    - kaggle apiを用いて、`/kaggle/input`配下にデータをダウンロードするためのスクリプト（zip解凍込み）
+    ``` sh
+    $ chmod +x download_dataset.sh
+    $ ./download_dataset.sh kaggle competitions download -c titanic
+    ```
+- `src/utils/utils.py`
+    - loggerやseedの固定など、汎用的な関数を含んだモジュール
